@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brevity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://live.staticflickr.com/65535/52755121519_f58ee8bf48_c.jpg">
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            font-family: 'Gothic A1', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: black;
+        }
+
+        .fade-in {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        .fade-in.visible {
+          animation: fadeInDown 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeInDown {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .header {
+            color: white;
+            padding: 0;
+            text-align: left;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 0;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+        .header h2 {
+            font-size: 1.5rem;
+            margin: 0;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 1s forwards;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .gray-section {
+            background-color: #5A5A5A;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .gray-section p {
+            color: white;
+            font-size: 1.5rem;
+        }
+        .section {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 0;
+            background-color: #000000;
+        }
+        .text {
+            width: 50%;
+            padding: 0 50px;
+            box-sizing: border-box;
+        }
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #5A5A5A;
+            margin-bottom: 10px;
+        }
+        .medium-title {
+            font-size: 30px;
+            font-weight: bold;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+        }
+        .body {
+            font-size: 16px;
+            color: #D3D3D3;
+            line-height: 1.5;
+            text-align: justify;
+        }
+        .image {
+            width: 30%;
+        }
+        .image img {
+            width: 100%;
+        }
+
+        .cta {
+            animation: fadeIn 5s ease-in-out 0s forwards;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Brevity</h1>
+        <h2>The only program that provides the relevant without the irrelevant</h2>
+        <div class="cta" style="text-align: center; margin: 50px 0;">
+            <a href="/summarization" class="cta-button" style="font-size: 20px; font-weight: bold; color: #FFFFFF; text-decoration: none; border: 1px solid #FFFFFF; padding: 20px 40px; border-radius: 5px;">Get your free Brievity Now</a>
+        </div>
+    </header>
+    <section class="gray-section">
+        <p class="fade-in">Simple. Get your news summarised for you and sorted into topics. We give you what you only want to know.</p>
+    </section>
+    <main>
+        <div class="section">
+            <article class="text fade-in">
+                <h2 class="title">Advanced algorithm</h2>
+                <h3 class="medium-title">First the news.</h3>
+                <p class="body">We use an advanced program that scans for the most current and important news articles so that you don't miss anything. Sorting by topics and date we ensure our raw data is valuable and concise.</p>
+            </article>
+            <figure class="image">
+                <img src="https://live.staticflickr.com/65535/52755053613_69e3c36aa7_b.jpg" alt="An example image">
+            </figure>
+        </div>
+        <div class="section">
+            <figure class="image">
+                <img src="https://live.staticflickr.com/65535/52754025382_1344cd83c3_b.jpg" alt="Another example image">
+            </figure>
+            <article class="text fade-in">
+                <h2 class="title">Summarization Perfection</h2>
+                <h3 class="medium-title">Second, the part that cuts the boring short.</h3>
+                <p class="body">How do we ensure that that we keep the relevant information in and the irrelevant out? Simple, by using an advanced sequence language model from Facebook trained on a large corpus of text to ensure relevancy and accuracy.</p>
+            </article>
+        </div>
+        <div class="section">
+            <article class="text fade-in">
+                <h2 class="title">Simple and neat</h2>
+                <h3 class="medium-title">Lastly, your perfect news read.</h3>
+                <p class="body">Concise, relevant and saves you time. Anyone who wants to stay informed shouldn't have to go through useless information, advertisements and other things that waste your precious time. We solve that problem for you and best of all, its completely free!</p>
+            </article>
+            <figure class="image">
+                <img src="https://live.staticflickr.com/65535/52754971360_37d596dd1e_b.jpg" alt="Another example image">
+            </figure>
+        </div>
+    </main>
+    <footer>
+        <div class="cta" style="text-align: center; margin: 50px 0;">
+            <a href="/summarization" class="cta-button" style="font-size: 20px; font-weight: bold; color: #FFFFFF; text-decoration: none; border: 3px solid #FFFFFF; padding: 20px 40px; border-radius: 5px;">Try Brevity free now</a>
+        </div>
+    </footer>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let fadeInElements = document.querySelectorAll(".fade-in");
+
+        function isElementInViewport(el) {
+            let rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function checkVisibility() {
+            fadeInElements.forEach(function(element) {
+                if (isElementInViewport(element)) {
+                    element.classList.remove("fade-in");
+                }
+            });
+        }
+
+        function checkVisibility() {
+            fadeInElements.forEach(function(element) {
+                if (isElementInViewport(element)) {
+      element.classList.add("visible");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", checkVisibility);
+        window.addEventListener("resize", checkVisibility);
+
+        checkVisibility();
+    });
+</script>
+</body>
+</html>
+
