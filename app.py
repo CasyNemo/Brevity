@@ -1,4 +1,5 @@
 from flask import Flask, make_response
+from flask import render_template
 
 app = Flask(__name__)
 
