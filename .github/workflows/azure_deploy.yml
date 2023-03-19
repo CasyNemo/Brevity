@@ -29,6 +29,6 @@ jobs:
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'brevitypro'  # Change this to your Azure Web App name
-        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_00E174E6A2F1433B928DF2E7891DB3D3 }}
+        app-name: 'brevityprogram'  # Change this to your Azure Web App name
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9135286EF43C43269F9A51FF931036AF }}
         package: app.zip
