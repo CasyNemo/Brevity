@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'brevityprogram'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7Q2abG2gwBwcP94y4QiPcrdAPCEx36hs7dWRlv6BrXaP7ATf1WwX35woFf6XF }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9135286EF43C43269F9A51FF931036AF  }}
