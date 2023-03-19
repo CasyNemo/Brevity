@@ -1,7 +1,11 @@
-from flask import Flask, request, render_template
-import test
+from flask import Flask, make_response
 
 app = Flask(__name__)
+
+@app.after_request
+def add_header(response):
+    response.headers['Cache-Control'] = 'no-store'
+    return response
 
 @app.route('/summarization', methods=['GET', 'POST'])
 def summarization():
