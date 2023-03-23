@@ -21,10 +21,13 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        python -m venv myvenv
+        source myvenv/bin/activate
         pip install -r requirements.txt
 
     - name: Zip the application files
-      run: zip -r app.zip .
+      run: |
+        zip -r app.zip . myvenv
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
