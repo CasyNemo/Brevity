@@ -27,7 +27,7 @@ jobs:
 
     - name: Zip the application files
       run: |
-        zip -r app.zip . myvenv
+        zip -r app.zip . -x '*.git*' -x 'myvenv/lib/python*/__pycache__/*'
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
