@@ -1,5 +1,5 @@
 # Brevity
-Briefly is a summarization web application built using Flask that summarizes long-form text into a shorter, easier-to-read format. With Briefly, you can choose the amount of time you have to read and get a summary that fits that time frame.
+Brevity is a summarization web application built using Flask that summarizes long-form text into a shorter, easier-to-read format. With Briefly, you can choose the amount of time you have to read and get a summary that fits that time frame.
 
 Features
 Choose from 1, 3, 5, or 10 minute read times
