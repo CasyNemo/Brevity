@@ -1,7 +1,7 @@
 from flask import Flask, make_response
 from flask import render_template
 from flask import Flask, request
-import test
+from test import test
 
 app = Flask(__name__)
 
