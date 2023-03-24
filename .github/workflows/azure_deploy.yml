@@ -21,8 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install --target=".python_packages/lib/site-packages" -r requirements.txt
-
+        pip install --target="${{ github.workspace }}/.python_packages/lib/site-packages" -r requirements.txt
 
     - name: Zip the application files
       run: |
