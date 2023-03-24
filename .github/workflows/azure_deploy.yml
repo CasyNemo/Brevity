@@ -3,7 +3,7 @@ name: Build and deploy Python app to Azure Web App
 on:
   push:
     branches:
-      - main  # Change this to the branch you want to trigger the deployment
+      - main  
 
 jobs:
   build-and-deploy:
