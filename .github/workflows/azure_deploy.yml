@@ -21,14 +21,13 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        mkdir .python_packages
-        pip install --target=".python_packages" -r requirements.txt
-        echo "PYTHONPATH=${{ github.workspace }}/.python_packages" >> $GITHUB_ENV
-
+        python -m venv .venv
+        source .venv/bin/activate
+        pip install -r requirements.txt
 
     - name: Zip the application files
       run: |
-        zip -r app.zip . -x '*.git*' -x 'myvenv/lib/python*/__pycache__/*'
+         zip -r app.zip . -x '*.git*' -x '__pycache__/*' -x '.venv/lib/python*/__pycache__/*'
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
