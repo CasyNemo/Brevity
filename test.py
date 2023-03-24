@@ -1,4 +1,3 @@
-import requests
 import datetime
 from transformers import BartTokenizer, BartForConditionalGeneration
 
