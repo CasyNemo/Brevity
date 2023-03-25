@@ -36,3 +36,4 @@ jobs:
         app-name: 'brevityprogram'  
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
         package: app.zip
+        verbosity: 'debug'
