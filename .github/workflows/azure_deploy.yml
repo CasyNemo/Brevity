@@ -1,6 +1,6 @@
 name: Build and deploy Python app to Azure Web App
 
-on: 
+on:
   push:
     branches:
       - main
@@ -18,24 +18,24 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.11.1'
-        
+
     - name: Create and activate virtual environment
       run: |
-        python -m venv venv
-        source venv/bin/activate
-    
+        python -m venv antenv
+        source antenv/bin/activate
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install .
+        pip install -r requirements.txt
 
-    - name: Zip the application files
+    - name: Zip the application files including the virtual environment
       run: |
-         zip -r app.zip . -x '*.git*' -x '__pycache__/*' -x '.venv/lib/python*/__pycache__/*'
+        zip -r app.zip . -x '*.git*' -x '__pycache__/*' -x 'antenv/lib/python*/__pycache__/*'
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'brevityprogram'  
+        app-name: 'brevityprogram'
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
         package: app.zip
