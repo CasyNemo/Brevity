@@ -27,8 +27,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install requests -t /home/site/wwwroot/.python_packages/lib/site-packages
+        pip install -r requirements.txt --user
       
     - name: Zip the application files
       run: |
