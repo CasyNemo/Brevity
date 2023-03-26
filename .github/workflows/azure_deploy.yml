@@ -23,6 +23,9 @@ jobs:
       run: |
         pip install --upgrade pip
         pip install -r requirements.txt
+        
+    - name: Make deploy.sh executable
+      run: chmod +x deploy.sh
 
     - name: Zip the application files
       run: |
