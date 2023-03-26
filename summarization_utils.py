@@ -1,5 +1,4 @@
 import datetime
-import requests
 from transformers import BartTokenizer, BartForConditionalGeneration
 
 def get_news_articles(query, days=1, lang='en'):
