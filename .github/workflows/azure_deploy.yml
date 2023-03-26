@@ -40,3 +40,4 @@ jobs:
         app-name: 'brevityprogram'
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
         package: app.zip
+        startup-command: 'python gunicorn_starter.py'
