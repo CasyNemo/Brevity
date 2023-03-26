@@ -1,7 +1,7 @@
 from flask import Flask, make_response
 from flask import render_template
 from flask import Flask, request
-from test import test
+from summarization_utils import get_summaries
 
 app = Flask(__name__)
 
