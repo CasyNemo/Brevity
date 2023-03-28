@@ -30,9 +30,9 @@ jobs:
         pip install -r requirements.txt
         pip install .
 
-    - name: Zip the application files including the virtual environment
+    - name: Zip the application files excluding the virtual environment
       run: |
-        zip -r app.zip . -x '*.git*' -x '__pycache__/*' -x 'antenv/lib/python*/__pycache__/*'
+        zip -r app.zip . -x '*.git*' -x '__pycache__/*' -x 'antenv/*'
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
