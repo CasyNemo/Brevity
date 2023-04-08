@@ -19,20 +19,15 @@ jobs:
       with:
         python-version: '3.9'
 
-    - name: Create and activate virtual environment
-      run: |
-        python -m venv antenv
-        source antenv/bin/activate
-
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install .
 
-    - name: Zip the application files excluding the virtual environment
+    - name: Zip the application files
       run: |
-        zip -r app.zip . -x '*.git*' -x '__pycache__/*' -x 'antenv/*'
+        zip -r app.zip . -x '*.git*' -x '__pycache__/*'
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
