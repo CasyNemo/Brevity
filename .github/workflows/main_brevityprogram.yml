@@ -53,7 +53,10 @@ jobs:
           path: .
 
       - name: Compress application files
-        run: zip -r app.zip .
+        run: |
+          find . -type d -name "__pycache__" -exec rm -r {} +
+          zip -r app.zip .
+
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
