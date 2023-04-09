@@ -57,3 +57,4 @@ jobs:
           app-name: 'brevityprogram'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0F15D4CE97394FFB838B939B92BEC4CD }}
+          package: app.zip
