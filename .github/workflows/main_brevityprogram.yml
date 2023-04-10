@@ -28,9 +28,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
-        
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
-      
+
+      - name: Remove unwanted files
+        run: |
+          find . -type d -name "__pycache__" -exec rm -r {} +
+          rm -rf .git
+          rm -rf .github
+          
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v2
         with:
@@ -53,6 +58,11 @@ jobs:
           name: python-app
           path: .
           
+      - name: Compress application files
+        run: |
+          find . -type d -name "__pycache__" -exec rm -r {} +
+          zip -r app.zip .
+
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
@@ -60,3 +70,4 @@ jobs:
           app-name: 'brevityprogram'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0F15D4CE97394FFB838B939B92BEC4CD }}
+          package: app.zip
