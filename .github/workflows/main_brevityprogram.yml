@@ -33,5 +33,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'brevityprogram'
-        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0F15D4CE97394FFB838B939B92BEC4CD }}
         package: app.zip
