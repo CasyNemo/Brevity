@@ -58,13 +58,8 @@ jobs:
           
       - name: Zip the application files
         run: |
-          zip -r app.zip . -x '.git' -x 'pycache/*'
+          zip -r app.zip . -x '*.git*' -x '*__pycache__*' -x '*.github*' -x '*venv*'
           
-      - name: Compress application files
-        run: |
-          find . -type d -name "__pycache__" -exec rm -r {} +
-          zip -r app.zip .
-
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
