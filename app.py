@@ -1,3 +1,18 @@
+import sys
+sys.path.append('/home/site/wwwroot/venv/lib/python3.9/site-packages')
+
+from flask import Flask, make_response
+from flask import render_template
+from flask import Flask, request
+from summarization_utils import get_summaries
+
+app = Flask(__name__)
+
+@app.after_request
+def add_header(response):
+    response.headers
+
+
 from flask import Flask, make_response
 from flask import render_template
 from flask import Flask, request
