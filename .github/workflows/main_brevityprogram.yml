@@ -25,9 +25,14 @@ jobs:
       
       - name: Install dependencies
         run: |
+          source venv/bin/activate
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
+      - name: Add venv to Python path
+        run: |
+          echo "export PYTHONPATH=$(pwd)/venv/lib/python3.9/site-packages" >> ~/.bashrc
+          source ~/.bashrc
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       
@@ -60,3 +65,10 @@ jobs:
           app-name: 'brevityprogram'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0F15D4CE97394FFB838B939B92BEC4CD }}
+          
+      # Optional: Add step to restart the web app here
+      
+      - name: Verify packages are installed
+        run: |
+          source venv/bin/activate
+          python -c "import requests"
